@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 })
 app.use('/posts', postRoutes);
 
+const CONNECTION_URL = "mongodb+srv://Joshua:12345josh@cluster0.fxm00.mongodb.net/WORCS(SMH)?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, {useUnifiedTopology: true, useNewUrlParser: true})
