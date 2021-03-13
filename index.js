@@ -14,9 +14,11 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('Hello to WORCS API')
+})
 app.use('/posts', postRoutes);
 
-const CONNECTION_URL = "mongodb+srv://Joshua:12345josh@cluster0.fxm00.mongodb.net/WORCS(SMH)?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, {useUnifiedTopology: true, useNewUrlParser: true})
